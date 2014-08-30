@@ -150,7 +150,7 @@ var fetchStops = function(coordX, coordY) {
       for (i = 0; i<data.LocationList.StopLocation.length; i++) {
         var stop = data.LocationList.StopLocation[i];
         var tempStop = {};
-        tempStop.title = stop.$.name.replace(/\ø/g, 'oe').replace(/\æ/g, 'ae').replace(/\å/g, 'aa').replace(/\Æ/g).replace('Ae').replace(/\Ø/g).replace('Oe').replace(/\Å/g, 'Aa').replace(/\,null/g,'');
+        tempStop.title = utf8_encode(stop.$.name);
         tempStop.id = stop.$.id;
         locations.push(tempStop);
 
